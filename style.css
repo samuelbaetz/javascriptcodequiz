@@ -1,0 +1,25 @@
+.title {
+    text-align: center;
+}
+
+.btn-outline-info {
+    margin-top: 10px;
+}
+
+
+
+#startquiz {
+    margin-left: 500px;
+}
+
+#testquestions {
+    visibility: hidden;
+}
+
+.answers {
+    margin-top: 10px;
+}
+
+/* #question{
+    margin-bottom: 100px;
+} */
