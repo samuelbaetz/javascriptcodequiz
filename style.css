@@ -20,6 +20,11 @@
     margin-top: 10px;
 }
 
-/* #question{
-    margin-bottom: 100px;
-} */
+#wronganswer {
+    color: red;
+}
+
+#correctanswer {
+    color: green;
+}
+

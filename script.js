@@ -3,6 +3,7 @@ function start() {
     document.getElementById('startquiz').style.visibility = "hidden";
     document.getElementById('disclaimer').style.visibility = "hidden";
     document.getElementById('testquestions').style.visibility = "visible";
+    startCountdown()
     questionone()
 }
 
@@ -20,8 +21,28 @@ function questionone(){
     a4.textContent = question1.answer4
 
     if (a3.addEventListener('click', questiontwo)) {
-
+       
     }
+
+    if (a2.addEventListener('click', wronganswer)) {
+       
+    }
+    if (a1.addEventListener('click', wronganswer)) {
+       
+    }
+    if (a4.addEventListener('click', wronganswer)) {
+       
+    }
+    if (a2.addEventListener('click', questiontwo)) {
+       
+    }
+    if (a1.addEventListener('click', questiontwo)) {
+       
+    }
+    if (a4.addEventListener('click', questiontwo)) {
+       
+    }
+    
 }
 
 function questiontwo() {
@@ -36,9 +57,27 @@ function questiontwo() {
     a2.textContent = question2.answer2
     a3.textContent = question2.answer3
     a4.textContent = question2.answer4
-
+    
     if (a3.addEventListener('click', questionthree)) {
 
+    }
+    if (a2.addEventListener('click', wronganswer)) {
+       
+    }
+    if (a1.addEventListener('click', wronganswer)) {
+       
+    }
+    if (a4.addEventListener('click', wronganswer)) {
+       
+    }
+    if (a2.addEventListener('click', questionthree)) {
+       
+    }
+    if (a1.addEventListener('click', questionthree)) {
+       
+    }
+    if (a4.addEventListener('click', questionthree)) {
+       
     }
     
 }
@@ -59,6 +98,24 @@ function questionthree() {
     if (a4.addEventListener('click', questionfour)) {
 
     }
+    if (a2.addEventListener('click', wronganswer)) {
+       
+    }
+    if (a1.addEventListener('click', wronganswer)) {
+       
+    }
+    if (a4.addEventListener('click', wronganswer)) {
+       
+    }
+    if (a2.addEventListener('click', questionfour)) {
+       
+    }
+    if (a1.addEventListener('click', questionfour)) {
+       
+    }
+    if (a3.addEventListener('click', questionfour)) {
+       
+    }
 }
 
 function questionfour() {
@@ -77,6 +134,24 @@ function questionfour() {
     if (a3.addEventListener('click', questionfive)) {
 
     }
+    if (a2.addEventListener('click', wronganswer)) {
+       
+    }
+    if (a1.addEventListener('click', wronganswer)) {
+       
+    }
+    if (a4.addEventListener('click', wronganswer)) {
+       
+    }
+    if (a2.addEventListener('click', questionfive)) {
+       
+    }
+    if (a1.addEventListener('click', questionfive)) {
+       
+    }
+    if (a4.addEventListener('click', questionfive)) {
+       
+    }
 
 }
 
@@ -94,23 +169,47 @@ function questionfive() {
     a4.textContent = question5.answer4
 
     if (a4.addEventListener('click', complete)) {
-
+        correctanswer()
+    }
+    if (a2.addEventListener('click', wronganswer)) {
+       
+    }
+    if (a1.addEventListener('click', wronganswer)) {
+       
+    }
+    if (a4.addEventListener('click', wronganswer)) {
+       
+    }
+    if (a2.addEventListener('click', complete)) {
+       
+    }
+    if (a1.addEventListener('click', complete)) {
+       
+    }
+    if (a3.addEventListener('click', complete)) {
+       
     }
 
 }
 
 function complete() {
     var q1 = document.querySelector("#question")
-    q1.textContent = "YOU DID IT BITCHHH"
+    q1.textContent = "Complete"
     document.getElementById('answer1').style.visibility = "hidden";
     document.getElementById('answer2').style.visibility = "hidden";
     document.getElementById('answer3').style.visibility = "hidden";
     document.getElementById('answer4').style.visibility = "hidden";
+    
 }
+
+function correctanswer() {
+    counter = counter + 5;
+}
+
+
 var startquiz = document.querySelector("#startquiz")
 
 startquiz.addEventListener('click', start);
-
 console.log(startquiz)
 
 var question1 = {
@@ -153,6 +252,30 @@ var question5 = {
     answer4: "console.log"
 }
 
-question1.answer1 = true
+var counter = 90;
+function startCountdown() {
+    var timer = document.querySelector("#time")
+      
+    var interval = setInterval(() => {
+      console.log(counter);
+      timer.textContent = counter
+      counter--;
+        
+      if (counter < 0 ) {
+        clearInterval(interval);
+        
+      }
 
-console.log(question1.answer1)
+      
+    }, 1000);
+  }
+
+  function wronganswer(){
+    var timer = document.querySelector("#time")
+      counter = counter - 5;
+      if (counter < 0 ) {
+        timer.textContent = 0
+        
+      }
+      console.log(counter)
+  }
