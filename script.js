@@ -6,6 +6,32 @@ function start() {
     startCountdown()
     questionone()
 }
+var timer = document.querySelector("#time")
+var counter = 90;
+var interval;
+function startCountdown() {
+    
+      
+    interval = setInterval(() => {
+      console.log(counter);
+      timer.textContent = counter
+      counter--;
+        
+      if (counter < 0 ) {
+        clearInterval(interval);
+        
+      } 
+
+    }, 1000);
+
+  }
+
+  function wronganswer(){
+    var timer = document.querySelector("#time")
+      counter = counter - 5;
+      
+      
+  }
 
 function questionone(){
     var q1 = document.querySelector("#question")
@@ -21,6 +47,9 @@ function questionone(){
     a4.textContent = question1.answer4
 
     if (a3.addEventListener('click', questiontwo)) {
+       
+    }
+    if (a3.addEventListener('click', correctanswer)) {
        
     }
 
@@ -61,6 +90,9 @@ function questiontwo() {
     if (a3.addEventListener('click', questionthree)) {
 
     }
+    if (a3.addEventListener('click', correctanswer)) {
+       
+    }
     if (a2.addEventListener('click', wronganswer)) {
        
     }
@@ -98,6 +130,9 @@ function questionthree() {
     if (a4.addEventListener('click', questionfour)) {
 
     }
+    if (a4.addEventListener('click', correctanswer)) {
+       
+    }
     if (a2.addEventListener('click', wronganswer)) {
        
     }
@@ -132,6 +167,10 @@ function questionfour() {
     if (a3.addEventListener('click', questionfive)) {
 
     }
+    if (a3.addEventListener('click', correctanswer)) {
+       
+    }
+    
     if (a2.addEventListener('click', wronganswer)) {
        
     }
@@ -168,6 +207,9 @@ function questionfive() {
 
     if (a4.addEventListener('click', complete)) {
         
+    }
+    if (a4.addEventListener('click', correctanswer)) {
+       
     }
     if (a2.addEventListener('click', wronganswer)) {
        
@@ -250,32 +292,7 @@ var question5 = {
     answer3: "For loops",
     answer4: "console.log"
 }
-var timer = document.querySelector("#time")
-var counter = 90;
-var interval;
-function startCountdown() {
-    
-      
-    interval = setInterval(() => {
-      console.log(counter);
-      timer.textContent = counter
-      counter--;
-        
-      if (counter < 0 ) {
-        clearInterval(interval);
-        
-      } 
 
-    }, 1000);
-
-  }
-
-  function wronganswer(){
-    var timer = document.querySelector("#time")
-      counter = counter - 5;
-      
-      
-  }
 
  
        

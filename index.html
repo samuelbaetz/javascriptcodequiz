@@ -8,10 +8,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="title">
+    
     <div class="container">
-        <h1>Javascript Quiz</h1> <p id="time"></p>
+        <div class="row">
+            <div class="col-4">
+                <a href= "#">Highscores</a>
+                </div>
+            <div class="col-4">
+        <h1 id="title">Javascript Quiz</h1> 
+        </div>
         
+        <div class="col-sm-4">
+        <h5 id="time"></h5>
+        
+      </div>  
     </div>
     </div>
     <br>
@@ -21,11 +31,20 @@
     <br>
     <br>
 <div class="container">
-    <div class="card">
+    
+    <div class="card text-center">
+        
         <div class="card-body">
-            <p id="disclaimer">This will test your knowledge of Javascript. You must complete the quiz in under a minute, otherwise you will not recieve any points. If you answer a question wrong, 10 seconds will be deducted from the timer. Good Luck, may the gods be ever in your favor.</p>
+            
+                <p id="disclaimer">This will test your knowledge of Javascript. You must complete the quiz in under a minute, otherwise you will not recieve any points. If you answer a question wrong, 10 seconds will be deducted from the timer. Good Luck, may the gods be ever in your favor.</p>
+                
             <button id="startquiz" type="button" class="btn btn-outline-info">Start Quiz</button>
+            
+            
+        
             <h3 id="question" class="hide"></h3>
+           
+                
             <div id="testquestions" class="hide">
                
                <button id="answer1" type="button" class="btn btn-primary answers"></button>
@@ -35,10 +54,12 @@
                <p id="wronganswer" ></p>
                <p id="correctanswer" ></p>
                
-               
+              
            </div>
         </div>
-    </div>
+    
+</div>
+</div>
 </div>
 <div class="footer">
     
