@@ -2,36 +2,14 @@
 function start() {
     document.getElementById('startquiz').style.visibility = "hidden";
     document.getElementById('disclaimer').style.visibility = "hidden";
+    document.getElementById('nameinput').style.visibility = "hidden";
     document.getElementById('testquestions').style.visibility = "visible";
+    var nameinput = document.getElementById("nameinput")
+    localStorage.setItem("nameinput", nameinput.value);
     startCountdown()
     questionone()
 }
-var timer = document.querySelector("#time")
-var counter = 90;
-var interval;
-function startCountdown() {
-    
-      
-    interval = setInterval(() => {
-      console.log(counter);
-      timer.textContent = counter
-      counter--;
-        
-      if (counter < 0 ) {
-        clearInterval(interval);
-        
-      } 
 
-    }, 1000);
-
-  }
-
-  function wronganswer(){
-    var timer = document.querySelector("#time")
-      counter = counter - 5;
-      
-      
-  }
 
 function questionone(){
     var q1 = document.querySelector("#question")
@@ -46,12 +24,14 @@ function questionone(){
     a3.textContent = question1.answer3
     a4.textContent = question1.answer4
 
-    if (a3.addEventListener('click', questiontwo)) {
-       
-    }
     if (a3.addEventListener('click', correctanswer)) {
        
     }
+    
+    if (a3.addEventListener('click', questiontwo)) {
+       
+    }
+    
 
     if (a2.addEventListener('click', wronganswer)) {
        
@@ -87,12 +67,14 @@ function questiontwo() {
     a3.textContent = question2.answer3
     a4.textContent = question2.answer4
     
-    if (a3.addEventListener('click', questionthree)) {
-
-    }
     if (a3.addEventListener('click', correctanswer)) {
        
     }
+    
+    if (a3.addEventListener('click', questionthree)) {
+
+    }
+    
     if (a2.addEventListener('click', wronganswer)) {
        
     }
@@ -127,12 +109,14 @@ function questionthree() {
     a3.textContent = question3.answer3
     a4.textContent = question3.answer4
 
-    if (a4.addEventListener('click', questionfour)) {
-
-    }
     if (a4.addEventListener('click', correctanswer)) {
        
     }
+    
+    if (a4.addEventListener('click', questionfour)) {
+
+    }
+    
     if (a2.addEventListener('click', wronganswer)) {
        
     }
@@ -164,12 +148,14 @@ function questionfour() {
     a3.textContent = question4.answer3
     a4.textContent = question4.answer4
 
-    if (a3.addEventListener('click', questionfive)) {
-
-    }
     if (a3.addEventListener('click', correctanswer)) {
        
     }
+    
+    if (a3.addEventListener('click', questionfive)) {
+
+    }
+    
     
     if (a2.addEventListener('click', wronganswer)) {
        
@@ -205,12 +191,14 @@ function questionfive() {
     a3.textContent = question5.answer3
     a4.textContent = question5.answer4
 
-    if (a4.addEventListener('click', complete)) {
-        
-    }
     if (a4.addEventListener('click', correctanswer)) {
        
     }
+    
+    if (a4.addEventListener('click', complete)) {
+        
+    }
+    
     if (a2.addEventListener('click', wronganswer)) {
        
     }
@@ -233,14 +221,21 @@ function questionfive() {
 }
 
 function complete() {
+    clearInterval(interval)
     var q1 = document.querySelector("#question")
    q1.textContent = "Complete"
     document.getElementById('answer1').style.visibility = "hidden";
     document.getElementById('answer2').style.visibility = "hidden";
     document.getElementById('answer3').style.visibility = "hidden";
     document.getElementById('answer4').style.visibility = "hidden";
-   clearInterval(interval)
+    
+    
     localStorage.setItem("score", counter)
+
+    var scores = document.getElementById("scores")
+    var scorevalue = localStorage.getItem("nameinput");
+    var snumvalue = localStorage.getItem("score")
+    scores.textContent = scorevalue + " " + snumvalue;
 }  
 
 function correctanswer() {
@@ -293,6 +288,40 @@ var question5 = {
     answer4: "console.log"
 }
 
+var timer = document.querySelector("#time")
+var counter = 90;
+var interval;
+function startCountdown() {
+    
+      
+    interval = setInterval(() => {
+      console.log(counter);
+      timer.textContent = counter
+      counter--;
+        
+      if (counter < 0 ) {
+        clearInterval(interval);
+        
+      } 
 
+    }, 1000);
+
+  }
+
+  function wronganswer(){
+    var timer = document.querySelector("#time")
+      counter = counter - 5;
+      
+      
+  }
+
+  function showHigh() {
+    $('#myModal').modal('show')
+  }
+
+  var modal = document.querySelector("#highscores")
+  modal.addEventListener('click', showHigh)
  
        
+
+
