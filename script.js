@@ -104,9 +104,7 @@ function questionthree() {
     if (a1.addEventListener('click', wronganswer)) {
        
     }
-    if (a4.addEventListener('click', wronganswer)) {
-       
-    }
+    
     if (a2.addEventListener('click', questionfour)) {
        
     }
@@ -169,7 +167,7 @@ function questionfive() {
     a4.textContent = question5.answer4
 
     if (a4.addEventListener('click', complete)) {
-        correctanswer()
+        
     }
     if (a2.addEventListener('click', wronganswer)) {
        
@@ -177,7 +175,7 @@ function questionfive() {
     if (a1.addEventListener('click', wronganswer)) {
        
     }
-    if (a4.addEventListener('click', wronganswer)) {
+    if (a3.addEventListener('click', wronganswer)) {
        
     }
     if (a2.addEventListener('click', complete)) {
@@ -194,13 +192,14 @@ function questionfive() {
 
 function complete() {
     var q1 = document.querySelector("#question")
-    q1.textContent = "Complete"
+   q1.textContent = "Complete"
     document.getElementById('answer1').style.visibility = "hidden";
     document.getElementById('answer2').style.visibility = "hidden";
     document.getElementById('answer3').style.visibility = "hidden";
     document.getElementById('answer4').style.visibility = "hidden";
-    
-}
+   clearInterval(interval)
+    localStorage.setItem("score", counter)
+}  
 
 function correctanswer() {
     counter = counter + 5;
@@ -251,12 +250,13 @@ var question5 = {
     answer3: "For loops",
     answer4: "console.log"
 }
-
+var timer = document.querySelector("#time")
 var counter = 90;
+var interval;
 function startCountdown() {
-    var timer = document.querySelector("#time")
+    
       
-    var interval = setInterval(() => {
+    interval = setInterval(() => {
       console.log(counter);
       timer.textContent = counter
       counter--;
@@ -264,18 +264,18 @@ function startCountdown() {
       if (counter < 0 ) {
         clearInterval(interval);
         
-      }
+      } 
 
-      
     }, 1000);
+
   }
 
   function wronganswer(){
     var timer = document.querySelector("#time")
       counter = counter - 5;
-      if (counter < 0 ) {
-        timer.textContent = 0
-        
-      }
-      console.log(counter)
+      
+      
   }
+
+ 
+       
