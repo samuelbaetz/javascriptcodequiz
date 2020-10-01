@@ -232,10 +232,6 @@ function complete() {
     
     localStorage.setItem("score", counter)
 
-    var scores = document.getElementById("scores")
-    var scorevalue = localStorage.getItem("nameinput");
-    var snumvalue = localStorage.getItem("score")
-    scores.textContent = scorevalue + " " + snumvalue;
 }  
 
 function correctanswer() {
@@ -321,7 +317,18 @@ function startCountdown() {
 
   var modal = document.querySelector("#highscores")
   modal.addEventListener('click', showHigh)
+  modal.addEventListener('click', getscores)
  
-       
+  
+  function getscores() {
+  var scores = document.getElementById("scores")
+  var scorevalue = localStorage.getItem("nameinput");
+  var snumvalue = localStorage.getItem("score")
+  var li = document.createElement("li");
 
+  var combinedvalue = scorevalue + " " + snumvalue;
+  li.textContent = combinedvalue;
+  scores.appendChild(li);
+  }
 
+var scoresarr = []
