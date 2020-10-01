@@ -5,4 +5,4 @@ This application tests the users skills in Javascript by asking them 5 questions
 2. Updates the timer as the user gets questions wrong or right, and awards them time accordingly
 3. When the user is finished with the quiz it updates the localstorage of their high scores
 
-![Example Image](assets/example.gif)
+![Application Example](example.gif)
