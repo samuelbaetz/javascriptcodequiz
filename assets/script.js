@@ -8,15 +8,16 @@ function start() {
     localStorage.setItem("nameinput", nameinput.value);
     startCountdown()
     questionone()
+    return;
 }
-
-
-function questionone(){
     var q1 = document.querySelector("#question")
     var a1 = document.querySelector("#answer1")
     var a2 = document.querySelector("#answer2")
     var a3 = document.querySelector("#answer3")
     var a4 = document.querySelector("#answer4")
+
+function questionone(){
+    
 
     q1.textContent = question1.question
     a1.textContent = question1.answer1
@@ -55,11 +56,7 @@ function questionone(){
 }
 
 function questiontwo() {
-    var q1 = document.querySelector("#question")
-    var a1 = document.querySelector("#answer1")
-    var a2 = document.querySelector("#answer2")
-    var a3 = document.querySelector("#answer3")
-    var a4 = document.querySelector("#answer4")
+    
 
     q1.textContent = question2.question
     a1.textContent = question2.answer1
@@ -77,13 +74,13 @@ function questiontwo() {
     
     if (a2.addEventListener('click', wronganswer)) {
        
-    }
+    };
     if (a1.addEventListener('click', wronganswer)) {
        
-    }
+    };
     if (a4.addEventListener('click', wronganswer)) {
        
-    }
+    };
     if (a2.addEventListener('click', questionthree)) {
        
     }
@@ -93,23 +90,26 @@ function questiontwo() {
     if (a4.addEventListener('click', questionthree)) {
        
     }
+
+    
     
 }
 
+
+
 function questionthree() {
-    var q1 = document.querySelector("#question")
-    var a1 = document.querySelector("#answer1")
-    var a2 = document.querySelector("#answer2")
-    var a3 = document.querySelector("#answer3")
-    var a4 = document.querySelector("#answer4")
+
+    
+    
 
     q1.textContent = question3.question
     a1.textContent = question3.answer1
     a2.textContent = question3.answer2
     a3.textContent = question3.answer3
     a4.textContent = question3.answer4
-
-    if (a4.addEventListener('click', correctanswer)) {
+   
+      
+    if (a3.addEventListener('click', correctanswer)) {
        
     }
     
@@ -123,7 +123,9 @@ function questionthree() {
     if (a1.addEventListener('click', wronganswer)) {
        
     }
-    
+    if (a4.addEventListener('click', wronganswer)) {
+       
+    }
     if (a2.addEventListener('click', questionfour)) {
        
     }
@@ -133,14 +135,14 @@ function questionthree() {
     if (a3.addEventListener('click', questionfour)) {
        
     }
+    
+    
+
+    
 }
 
 function questionfour() {
-    var q1 = document.querySelector("#question")
-    var a1 = document.querySelector("#answer1")
-    var a2 = document.querySelector("#answer2")
-    var a3 = document.querySelector("#answer3")
-    var a4 = document.querySelector("#answer4")
+    
 
     q1.textContent = question4.question
     a1.textContent = question4.answer1
@@ -155,7 +157,6 @@ function questionfour() {
     if (a3.addEventListener('click', questionfive)) {
 
     }
-    
     
     if (a2.addEventListener('click', wronganswer)) {
        
@@ -179,11 +180,7 @@ function questionfour() {
 }
 
 function questionfive() {
-    var q1 = document.querySelector("#question")
-    var a1 = document.querySelector("#answer1")
-    var a2 = document.querySelector("#answer2")
-    var a3 = document.querySelector("#answer3")
-    var a4 = document.querySelector("#answer4")
+    
 
     q1.textContent = question5.question
     a1.textContent = question5.answer1
@@ -236,6 +233,7 @@ function complete() {
 
 function correctanswer() {
     counter = counter + 5;
+    
 }
 
 
@@ -305,9 +303,9 @@ function startCountdown() {
   }
 
   function wronganswer(){
-    var timer = document.querySelector("#time")
+    
       counter = counter - 5;
-      
+      $('#wrong').toast('show')
       
   }
 
@@ -332,3 +330,7 @@ function startCountdown() {
   }
 
 var scoresarr = []
+
+// remove event listeners 
+// remove if statements
+
