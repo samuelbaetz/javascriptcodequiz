@@ -35,13 +35,13 @@ function questionone(){
     
 
     if (a2.addEventListener('click', wronganswer)) {
-       
+        return;
     }
     if (a1.addEventListener('click', wronganswer)) {
-       
+        return;
     }
     if (a4.addEventListener('click', wronganswer)) {
-       
+        return;
     }
     if (a2.addEventListener('click', questiontwo)) {
        
@@ -73,13 +73,13 @@ function questiontwo() {
     }
     
     if (a2.addEventListener('click', wronganswer)) {
-       
+        
     };
     if (a1.addEventListener('click', wronganswer)) {
-       
+        
     };
     if (a4.addEventListener('click', wronganswer)) {
-       
+        
     };
     if (a2.addEventListener('click', questionthree)) {
        
@@ -91,8 +91,10 @@ function questiontwo() {
        
     }
 
-    
-    
+    a2.removeEventListener('click', wronganswer, false);
+    a1.removeEventListener('click', wronganswer, false);
+    a4.removeEventListener('click', wronganswer, false);
+
 }
 
 
@@ -118,13 +120,13 @@ function questionthree() {
     }
     
     if (a2.addEventListener('click', wronganswer)) {
-       
+       return;
     }
     if (a1.addEventListener('click', wronganswer)) {
-       
+       return;
     }
     if (a4.addEventListener('click', wronganswer)) {
-       
+       return;
     }
     if (a2.addEventListener('click', questionfour)) {
        
@@ -233,7 +235,7 @@ function complete() {
 
 function correctanswer() {
     counter = counter + 5;
-    
+    $('#correct').toast('show')
 }
 
 
